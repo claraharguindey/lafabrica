@@ -1,16 +1,83 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>Untitled Document</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fábrica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+        }
+
+        .main-container {
+            width: 100%;
+        }
+
+        .imagen-piscina {
+            text-align: center;
+        }
+
+        .imagen-piscina img {
+            max-width: 100%;
+            height: auto;
+            border: none;
+            transition: opacity 0.3s;
+        }
+
+        .imagen-piscina img:hover {
+            opacity: 0.8;
+        }
+
+        .silos-container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .silo {
+            width: 108px;
+            height: 627px;
+            display: inline-block;
+        }
+
+        .silo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
 </head>
-<body bgcolor="#000000" onLoad="MM_timelinePlay('Timeline1')" topmargin="0" leftmargin="0"  rightmargin="0"  marginwidth="0" marginheight="0">
-<table width="100%" border="0">
-  <tr align="center">
-    <td height="113"><a href="./paisajes.html" target="_self"><img src="piscina1_.jpg" width="770" height="439" border="0"></a></td>
-  </tr>
-  <tr align="center"> 
-    <td height="273"><img src="../ar/silo1.gif" width="108" height="627"><img src="../ar/silo1.gif" width="108" height="627"><img src="../ar/silo1.gif" width="108" height="627"><img src="../ar/silo1.gif" width="108" height="627"><img src="../ar/silo1.gif" width="108" height="627"><img src="../ar/silo1.gif" width="108" height="627"><img src="../ar/silo1.gif" width="108" height="627"></td>
-  </tr>
-</table>
+<body>
+    <table width="100%" border="0">
+        <tr>
+            <td align="center">
+                <a href="./paisajes.html">
+                    <img src="piscina1_.jpg" width="770" height="439" alt="Piscina" border="0">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <div class="silos-container">
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 1"></div>
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 2"></div>
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 3"></div>
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 4"></div>
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 5"></div>
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 6"></div>
+                    <div class="silo"><img src="../ar/silo1.gif" alt="Silo 7"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

@@ -1,205 +1,180 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>Untitled Document</title>
-<style>
-<!--
-.contenido {
-	COLOR: #6666FF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-ALIGN: justify
-; line-height: 18px; letter-spacing : 0px}
--->
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<script language="JavaScript">
-<!--
-function MM_timelinePlay(tmLnName, myID) { //v1.2
-  //Copyright 1997 Macromedia, Inc. All rights reserved.
-  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
-  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
-  tmLn = document.MM_Time[tmLnName];
-  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
-  if (myID == tmLn.ID) { //if Im newest
-    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
-    fNew = ++tmLn.curFrame;
-    for (i=0; i<tmLn.length; i++) {
-      sprite = tmLn[i];
-      if (sprite.charAt(0) == 's') {
-        if (sprite.obj) {
-          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
-          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
-            keyFrm=1;
-            for (j=0; j<sprite.values.length; j++) {
-              props = sprite.values[j]; 
-              if (numKeyFr != props.length) {
-                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
-                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
-              } else {
-                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
-                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
-                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
-                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
-        } } } } }
-      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
-      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
-  } }
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fábrica - Paisajes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-function MM_initTimelines() {
-    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
-    var ns = navigator.appName == "Netscape";
-    document.MM_Time = new Array(1);
-    document.MM_Time[0] = new Array(7);
-    document.MM_Time["Timeline1"] = document.MM_Time[0];
-    document.MM_Time[0].MM_Name = "Timeline1";
-    document.MM_Time[0].fps = 12;
-    document.MM_Time[0][0] = new String("sprite");
-    document.MM_Time[0][0].slot = 1;
-    if (ns)
-        document.MM_Time[0][0].obj = document["Layer1"];
-    else
-        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
-    document.MM_Time[0][0].keyFrames = new Array(60, 85);
-    document.MM_Time[0][0].values = new Array(2);
-    document.MM_Time[0][0].values[0] = new Array(10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10);
-    document.MM_Time[0][0].values[0].prop = "left";
-    document.MM_Time[0][0].values[1] = new Array(0,12,24,36,48,60,72,84,96,108,120,132,144,156,168,180,192,204,216,228,240,252,264,276,288,300);
-    document.MM_Time[0][0].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][0].values[0].prop2 = "style";
-        document.MM_Time[0][0].values[1].prop2 = "style";
-    }
-    document.MM_Time[0][1] = new String("sprite");
-    document.MM_Time[0][1].slot = 2;
-    if (ns)
-        document.MM_Time[0][1].obj = document["Layer2"];
-    else
-        document.MM_Time[0][1].obj = document.all ? document.all["Layer2"] : null;
-    document.MM_Time[0][1].keyFrames = new Array(50, 75);
-    document.MM_Time[0][1].values = new Array(2);
-    document.MM_Time[0][1].values[0] = new Array(120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120);
-    document.MM_Time[0][1].values[0].prop = "left";
-    document.MM_Time[0][1].values[1] = new Array(0,12,24,36,48,60,72,84,96,108,120,132,144,156,168,180,192,204,216,228,240,252,264,276,288,300);
-    document.MM_Time[0][1].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][1].values[0].prop2 = "style";
-        document.MM_Time[0][1].values[1].prop2 = "style";
-    }
-    document.MM_Time[0][2] = new String("sprite");
-    document.MM_Time[0][2].slot = 3;
-    if (ns)
-        document.MM_Time[0][2].obj = document["Layer3"];
-    else
-        document.MM_Time[0][2].obj = document.all ? document.all["Layer3"] : null;
-    document.MM_Time[0][2].keyFrames = new Array(40, 65);
-    document.MM_Time[0][2].values = new Array(2);
-    document.MM_Time[0][2].values[0] = new Array(230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230,230);
-    document.MM_Time[0][2].values[0].prop = "left";
-    document.MM_Time[0][2].values[1] = new Array(0,12,24,36,48,60,72,84,96,108,120,132,144,156,168,180,192,204,216,228,240,252,264,276,288,300);
-    document.MM_Time[0][2].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][2].values[0].prop2 = "style";
-        document.MM_Time[0][2].values[1].prop2 = "style";
-    }
-    document.MM_Time[0][3] = new String("sprite");
-    document.MM_Time[0][3].slot = 4;
-    if (ns)
-        document.MM_Time[0][3].obj = document["Layer4"];
-    else
-        document.MM_Time[0][3].obj = document.all ? document.all["Layer4"] : null;
-    document.MM_Time[0][3].keyFrames = new Array(30, 55);
-    document.MM_Time[0][3].values = new Array(2);
-    document.MM_Time[0][3].values[0] = new Array(340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340,340);
-    document.MM_Time[0][3].values[0].prop = "left";
-    document.MM_Time[0][3].values[1] = new Array(0,12,24,36,48,60,72,84,96,108,120,132,144,156,168,180,192,204,216,228,240,252,264,276,288,300);
-    document.MM_Time[0][3].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][3].values[0].prop2 = "style";
-        document.MM_Time[0][3].values[1].prop2 = "style";
-    }
-    document.MM_Time[0][4] = new String("sprite");
-    document.MM_Time[0][4].slot = 5;
-    if (ns)
-        document.MM_Time[0][4].obj = document["Layer5"];
-    else
-        document.MM_Time[0][4].obj = document.all ? document.all["Layer5"] : null;
-    document.MM_Time[0][4].keyFrames = new Array(20, 45);
-    document.MM_Time[0][4].values = new Array(2);
-    document.MM_Time[0][4].values[0] = new Array(450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450,450);
-    document.MM_Time[0][4].values[0].prop = "left";
-    document.MM_Time[0][4].values[1] = new Array(0,12,24,36,48,60,72,84,96,108,120,132,144,156,168,180,192,204,216,228,240,252,264,276,288,300);
-    document.MM_Time[0][4].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][4].values[0].prop2 = "style";
-        document.MM_Time[0][4].values[1].prop2 = "style";
-    }
-    document.MM_Time[0][5] = new String("sprite");
-    document.MM_Time[0][5].slot = 6;
-    if (ns)
-        document.MM_Time[0][5].obj = document["Layer6"];
-    else
-        document.MM_Time[0][5].obj = document.all ? document.all["Layer6"] : null;
-    document.MM_Time[0][5].keyFrames = new Array(10, 35);
-    document.MM_Time[0][5].values = new Array(2);
-    document.MM_Time[0][5].values[0] = new Array(560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560,560);
-    document.MM_Time[0][5].values[0].prop = "left";
-    document.MM_Time[0][5].values[1] = new Array(0,12,24,36,48,60,72,84,96,108,120,132,144,156,168,180,192,204,216,228,240,252,264,276,288,300);
-    document.MM_Time[0][5].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][5].values[0].prop2 = "style";
-        document.MM_Time[0][5].values[1].prop2 = "style";
-    }
-    document.MM_Time[0][6] = new String("sprite");
-    document.MM_Time[0][6].slot = 7;
-    if (ns)
-        document.MM_Time[0][6].obj = document["Layer7"];
-    else
-        document.MM_Time[0][6].obj = document.all ? document.all["Layer7"] : null;
-    document.MM_Time[0][6].keyFrames = new Array(1, 25);
-    document.MM_Time[0][6].values = new Array(2);
-    document.MM_Time[0][6].values[0] = new Array(670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670,670);
-    document.MM_Time[0][6].values[0].prop = "left";
-    document.MM_Time[0][6].values[1] = new Array(0,12,25,38,50,63,75,88,100,113,125,138,150,162,175,188,200,213,225,238,250,263,275,288,300);
-    document.MM_Time[0][6].values[1].prop = "top";
-    if (!ns) {
-        document.MM_Time[0][6].values[0].prop2 = "style";
-        document.MM_Time[0][6].values[1].prop2 = "style";
-    }
-    document.MM_Time[0].lastFrame = 85;
-    for (i=0; i<document.MM_Time.length; i++) {
-        document.MM_Time[i].ID = null;
-        document.MM_Time[i].curFrame = 0;
-        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
-    }
-}
-//-->
-</script>
+        body {
+            background-color: #000000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            padding: 5px;
+            overflow-x: hidden;
+        }
+
+        .contenido {
+            color: #6666FF;
+            font-size: 10pt;
+            text-align: justify;
+            line-height: 18px;
+            letter-spacing: 0px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contenedor de silos */
+        .silos-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Cada silo individual */
+        .silo {
+            position: absolute;
+            width: 108px;
+            height: 627px;
+            top: -627px; /* Empiezan fuera de la pantalla */
+            animation: caida linear forwards;
+        }
+
+        .silo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Posiciones iniciales de cada silo */
+        .silo:nth-child(1) { 
+            left: 10px; 
+            animation-delay: 0.083s; /* Frame 1 / 12fps */
+            animation-duration: 2s;
+        }
+        .silo:nth-child(2) { 
+            left: 120px; 
+            animation-delay: 0.833s; /* Frame 10 / 12fps */
+            animation-duration: 2.083s;
+        }
+        .silo:nth-child(3) { 
+            left: 230px; 
+            animation-delay: 1.667s; /* Frame 20 / 12fps */
+            animation-duration: 2.083s;
+        }
+        .silo:nth-child(4) { 
+            left: 340px; 
+            animation-delay: 2.5s; /* Frame 30 / 12fps */
+            animation-duration: 2.083s;
+        }
+        .silo:nth-child(5) { 
+            left: 450px; 
+            animation-delay: 3.333s; /* Frame 40 / 12fps */
+            animation-duration: 2.083s;
+        }
+        .silo:nth-child(6) { 
+            left: 560px; 
+            animation-delay: 4.167s; /* Frame 50 / 12fps */
+            animation-duration: 2.083s;
+        }
+        .silo:nth-child(7) { 
+            left: 670px; 
+            animation-delay: 5s; /* Frame 60 / 12fps */
+            animation-duration: 2.083s;
+        }
+
+        /* Animación de caída */
+        @keyframes caida {
+            from {
+                top: -627px;
+            }
+            to {
+                top: 300px;
+            }
+        }
+
+        /* Contenedor de la imagen clickeable */
+        .imagen-piscina {
+            text-align: center;
+            margin-top: 350px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .imagen-piscina img {
+            max-width: 100%;
+            height: auto;
+            border: none;
+            transition: opacity 0.3s;
+        }
+
+        .imagen-piscina img:hover {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .silo {
+                transform: scale(0.7);
+                transform-origin: top left;
+            }
+            
+            .silo:nth-child(1) { left: 5px; }
+            .silo:nth-child(2) { left: 80px; }
+            .silo:nth-child(3) { left: 155px; }
+            .silo:nth-child(4) { left: 230px; }
+            .silo:nth-child(5) { left: 305px; }
+            .silo:nth-child(6) { left: 380px; }
+            .silo:nth-child(7) { left: 455px; }
+
+            .contenido {
+                font-size: 9pt;
+                padding: 10px;
+            }
+        }
+
+      
+    </style>
 </head>
+<body>
+    <!-- Contenedor de silos animados -->
+    <div class="silos-container">
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 1"></div>
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 2"></div>
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 3"></div>
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 4"></div>
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 5"></div>
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 6"></div>
+        <div class="silo"><img src="../ar/silo1.gif" alt="Silo 7"></div>
+    </div>
 
-<body bgcolor="#000000" onLoad="MM_timelinePlay('Timeline1')"  topmargin="3" leftmargin="5"  rightmargin="5"  marginwidth="5" marginheight="5">
- 
-<P class=contenido> Con la manipulaci&oacute;n y transformaci&oacute;n, se descodifican 
-  las claves y desorganiza el paisaje real, para crear paisajes artificiales, 
-  en un proceso de reencarnaci&oacute;n. Es una forma de estirar el tiempo de 
-  permanencia. Los tejados que estaban en la vertical de los hornos eran un bosque 
-  de chimeneas, los otros tejados, eran terrazas de agua, grandes estanques en 
-  los que crec&iacute;an algunas plantas y cientos de peces que nadie sabe c&oacute;mo 
-  llegaron all&iacute;. En estas terrazas de agua se reflejaban y duplicaban los 
-  muros, ventanas, y pilares, el cielo y las nubes. El ruido de la ciudad era 
-  complementado por el revolotear de cientos de gaviotas que sol&iacute;an detenerse 
-  a beber. 
-<div id="Layer7" style="position:absolute; width:110px; height:115px; z-index:7; left: 670; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<div id="Layer2" style="position:absolute; width:110px; height:115px; z-index:2; left: 120; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<div id="Layer6" style="position:absolute; width:110px; height:115px; z-index:6; left: 560; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<div id="Layer4" style="position:absolute; width:110px; height:115px; z-index:4; left: 340; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<div id="Layer3" style="position:absolute; width:110px; height:115px; z-index:3; left: 230; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<div id="Layer1" style="position:absolute; width:110px; height:115px; z-index:1; left: 10px; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<div id="Layer5" style="position:absolute; width:110px; height:115px; z-index:5; left: 450; top: 0px"><img src="../ar/silo1.gif" width="108" height="627"></div>
-<br>
-<table width="100%" border="0" align="center">
-  <tr>
-    <td>
-      <div align="center"><a href="./paisajes1.html" target="_self"><img src="piscina4.jpg" width="770" height="146" border="0"></a></div>
-    </td>
-  </tr>
-</table>
+    <!-- Contenido de texto -->
+    <p class="contenido">
+        Con la manipulación y transformación, se descodifican las claves y desorganiza 
+        el paisaje real, para crear paisajes artificiales, en un proceso de reencarnación. 
+        Es una forma de estirar el tiempo de permanencia. Los tejados que estaban en la 
+        vertical de los hornos eran un bosque de chimeneas, los otros tejados, eran terrazas 
+        de agua, grandes estanques en los que crecían algunas plantas y cientos de peces que 
+        nadie sabe cómo llegaron allí. En estas terrazas de agua se reflejaban y duplicaban 
+        los muros, ventanas, y pilares, el cielo y las nubes. El ruido de la ciudad era 
+        complementado por el revolotear de cientos de gaviotas que solían detenerse a beber.
+    </p>
+
+    <div class="imagen-piscina">
+        <a href="./paisajes1.html">
+            <img src="piscina4.jpg" width="770" height="146" alt="Piscina">
+        </a>
+    </div>
 </body>
 </html>
