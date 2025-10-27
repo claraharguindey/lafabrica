@@ -1,35 +1,81 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
-<title>Untitled Document</title>
-<SCRIPT language=JavaScript>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>La Fábrica</title>
+   <script>
+      const mensaje = "Ya no hay acto ni acontecimiento que no se refracte en una imagen técnica o sobre una pantalla, ni una acción que no desee ser fotografiada, filmada, grabada, que no desee confluir en esta memoria y volverse en ella eternamente reproducible";
+      let nada = "";
 
-<!--
+      for (let i = 1; i < 100; i++) {
+         nada += " ";
+      }
 
-mensaje="Ya no hay acto ni acontecimiento que no se refracte en una imagen t�cnica o sobre una pantalla, ni una acci�n que no desee ser fotografiada, filmada,  grabada, que no desee confluir en esta memoria y volverse en ella eternamente reproducible"   //mensaje de status
-nada=""
-for (var i=1;i<100;i++){
-nada+=" "}
-mens=nada+mensaje 
-cont=1
-larg=mens.length
+      let mens = nada + mensaje;
+      let cont = 1;
+      const larg = mens.length;
 
-function scroll(){
-  cont++
-  if (cont==larg){
-      cont=1
-   }
-   window.status=mens.substring(cont,larg)
-   setTimeout("scroll()",80)
-}
+      function scrollTexto() {
+         cont++;
+         if (cont >= larg) {
+            cont = 1;
+         }
+         const scrollBar = document.getElementById('scroll-bar');
+         if (scrollBar) {
+            scrollBar.textContent = mens.substring(cont, larg);
+         }
+         setTimeout(scrollTexto, 80);
+      }
 
-//-->
-scroll()
-</SCRIPT>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      // Iniciar scroll cuando cargue la página
+      window.onload = function () {
+         scrollTexto();
+      };
+   </script>
+   <style>
+      body {
+         background-color: #000000;
+         margin: 0;
+         padding: 0;
+         text-align: center;
+      }
 
+      img {
+         vertical-align: top;
+      }
+
+      /* Barra de scroll visible en la parte inferior */
+      #scroll-bar {
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         background-color: #333333;
+         color: #00FF00;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         padding: 5px 10px;
+         overflow: hidden;
+         white-space: nowrap;
+         z-index: 1000;
+      }
+   </style>
 </head>
 
-<body bgcolor="#000000"  topmargin="0" leftmargin="0"  rightmargin="0"  marginwidth="0" marginheight="0">
-<div align="center"><img src="ar/siete.jpg" width="110" height="635"><img src="ar/siete.jpg" width="110" height="635"><img src="ar/siete.jpg" width="110" height="635"><img src="ar/siete.jpg" width="110" height="635"><img src="ar/siete.jpg" width="110" height="635"><img src="ar/siete.jpg" width="110" height="635"><img src="ar/siete.jpg" width="110" height="635"></div>
+<body>
+   <div id="scroll-bar"></div>
+
+   <div align="center">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 1">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 2">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 3">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 4">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 5">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 6">
+      <img src="ar/siete.jpg" width="110" height="635" alt="Siete 7">
+   </div>
 </body>
+
 </html>
