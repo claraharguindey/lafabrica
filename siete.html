@@ -6,33 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>La Fábrica</title>
    <script>
-      const mensaje = "Ya no hay acto ni acontecimiento que no se refracte en una imagen técnica o sobre una pantalla, ni una acción que no desee ser fotografiada, filmada, grabada, que no desee confluir en esta memoria y volverse en ella eternamente reproducible";
-      let nada = "";
-
-      for (let i = 1; i < 100; i++) {
-         nada += " ";
-      }
-
-      let mens = nada + mensaje;
-      let cont = 1;
-      const larg = mens.length;
-
-      function scrollTexto() {
-         cont++;
-         if (cont >= larg) {
-            cont = 1;
-         }
-         const scrollBar = document.getElementById('scroll-bar');
-         if (scrollBar) {
-            scrollBar.textContent = mens.substring(cont, larg);
-         }
-         setTimeout(scrollTexto, 80);
-      }
-
-      // Iniciar scroll cuando cargue la página
-      window.onload = function () {
-         scrollTexto();
-      };
+      // scroll gestionado por CSS animation
    </script>
    <style>
       body {
@@ -53,19 +27,30 @@
          left: 0;
          width: 100%;
          background-color: #333333;
-         color: #00FF00;
-         font-family: Arial, Helvetica, sans-serif;
-         font-size: 15px;
-         padding: 5px 10px;
          overflow: hidden;
          white-space: nowrap;
          z-index: 1000;
+         padding: 5px 0;
+      }
+
+      #scroll-text {
+         display: inline-block;
+         color: #00FF00;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 15px;
+         white-space: nowrap;
+         animation: marquee 30s linear infinite;
+      }
+
+      @keyframes marquee {
+         0%   { transform: translateX(100vw); }
+         100% { transform: translateX(-100%); }
       }
    </style>
 </head>
 
 <body>
-   <div id="scroll-bar"></div>
+   <div id="scroll-bar"><span id="scroll-text">Ya no hay acto ni acontecimiento que no se refracte en una imagen técnica o sobre una pantalla, ni una acción que no desee ser fotografiada, filmada, grabada, que no desee confluir en esta memoria y volverse en ella eternamente reproducible</span></div>
 
    <div align="center">
       <img src="ar/siete.jpg" width="110" height="635" alt="Siete 1">
